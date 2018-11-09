@@ -8,7 +8,6 @@ write-host "Features Enabled"
 $queue = read-host -prompt "What is the queue #"
 
 #Can be changed for any printer name
-
 $Q = get-printer -Name *HP*
 add-printer -name $queue -portname $Q.portname -drivername "Generic / Text Only"
 
