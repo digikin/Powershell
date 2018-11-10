@@ -11,12 +11,12 @@ $queue = read-host -prompt "What is the queue #"
 $Q = get-printer -Name *HP*
 add-printer -name $queue -portname $Q.portname -drivername "Generic / Text Only"
 
-$printers = Get-Wmi-WMIObject -class Win32_Printer -computer localhost
-foreach ($printer in $printers){
-	IF($Printer.PortName.Contains("USB")-and $printer.published -eq $true){
-		$printer.Name + ":" + $printer.published
-		$printer.published = $false
-		$printer.put()
+$machine = Get-printer
+foreach ($machine in $machines){
+	IF($machine.PortName.Contains("USB")-and $machine.shared -eq $true){
+		$machine.Name + ":" + $machine.shared
+		$machine.shared = $false
+		$machine.put()
 	}
 }
 
